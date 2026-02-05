@@ -1,0 +1,13 @@
+[package]
+name = "monitor"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+name = "monitor"
+path = "src/lib.rs"
+
+[dependencies]
+chrono = "0.4.43"
+dbus = "0.9.10"
+rusqlite =  {version = "0.38.0", features = ["chrono"] }

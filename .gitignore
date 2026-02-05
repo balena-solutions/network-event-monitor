@@ -1,0 +1,9 @@
+target/
+*.db
+*DS_Store
+*.log
+*.sqlite
+*.sqlite-journal
+*.bak
+*.tmp
+*.swp
