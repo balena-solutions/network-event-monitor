@@ -1,4 +1,4 @@
-version: '2'
+version: "2"
 
 volumes:
   network_events_data:
@@ -9,6 +9,8 @@ services:
     volumes:
       - network_events_data:/app/data
     environment:
-      - 'DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket'
+      - "DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket"
     labels:
-      io.balena.features.dbus: '1'
+      # Security Warning: Enable access to host D-Bus:
+      # This allows the container to interact with the host system and pose security risks if not properly managed.
+      io.balena.features.dbus: "1"

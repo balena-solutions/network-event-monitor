@@ -1,3 +1,15 @@
+# Security Warning
+
+This is a proof-of-concept that you can use as a starting point to build your own monitoring system for Network Manager on balenaOS. 
+
+Make sure you understand container and balenaos security architecture before going further.
+
+The balenaos host dbus interface is powerful and breaks the isolation of your container.
+
+**Adding the `io.balena.features.dbus: '1'` significantly lower the security of your container, treat your container as if it was running `privileged` and had full root access to the host.**
+
+It's recommended to only give that level of access to containers that have a single, well-defined purpose, very limited interfaces and tighly-controlled lifecycle.
+
 # Balena network-event-monitor
 
 This project demonstrates how to track changes in network connectivity using the `/dispatcher.d/` NetworkManager hooks, as documented here: https://docs.balena.io/reference/OS/network/#networkmanager-user-scripts
